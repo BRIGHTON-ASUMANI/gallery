@@ -4,7 +4,8 @@ import datetime as dt
 
 # Create your views here.
 def picture(request):
-    return HttpResponse(request, 'picture.html')
+    return render(request, 'picture.html')
+
 def picture_today(request):
     date = dt.date.today()
     # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
