@@ -1,33 +1,37 @@
 from django.db import models
 import datetime as dt
 
-# Create your models here.
+# Location model
 
 class Location(models.Model):
-    loc_name = models.CharField(max_length =30)
-
+    location = models.CharField(max_length =30)
 
     def __str__(self):
-        return self.loc_name
+        return self.location
 
+# Category model
 class Category(models.Model):
-    cat_name = models.CharField(max_length =30)
+    category = models.CharField(max_length =30)
 
     def __str__(self):
-        return self.loc_name
+        return self.category
 
-
-
+# Image model
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'articles/')
+    image = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length =30)
     image_description = models.TextField()
     category = models.ManyToManyField(Category)
-    image_location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location)
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.image_name
 
     class Meta:
-        ordering = ['pub_date']
+        ordering = ['image']
+
+    @classmethod
+    def search_by_cateory(cls,search_term):
+        pictures = cls.objects.filter(category__icontains=search_term)
+        return pictures
