@@ -1,4 +1,4 @@
-{%extends 'all-images/base.html'%}
+{%extends 'base.html'%}
 {% block content %}
 <div class="container">
 
@@ -16,7 +16,8 @@
   {% if categories %}
     {% for category in categories %}
       <div class="col-sm-6 col-md-3">
-          <h1>{{category.category}}</h1>
+          <h1>{{category.image_description}}</h1>
+<img src="{{category.image.url}}" alt="">
       </div>
     {% endfor %}
   {% endif %}

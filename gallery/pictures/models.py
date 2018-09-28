@@ -29,9 +29,13 @@ class Image(models.Model):
         return self.image_name
 
     class Meta:
-        ordering = ['image']
+        ordering = ['pub_date']
+    @classmethod
+    def get_all(cls):
+        image = cls.objects.order_by('pub_date')
+        return image
 
     @classmethod
-    def search_by_cateory(cls,search_term):
-        pictures = cls.objects.filter(category__icontains=search_term)
+    def search_by_category(cls,search_term):
+        pictures = cls.objects.filter(category__category__icontains=search_term)
         return pictures
