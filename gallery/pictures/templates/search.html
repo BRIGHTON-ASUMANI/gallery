@@ -6,7 +6,7 @@
     {% if articles%}
       <h2> {{ categories|length }}}</h2>
     {% else %}
-      <h2>  no categories{{message}}</h2>
+      <h2> {{message}}</h2>
     {% endif %}
 
   </div>
@@ -22,8 +22,7 @@
             <figure>
             <img src="{{category.image.url}}" class="img-responsive img-responsive" alt="Image">
             </figure>
-            	<span class="fh5co-meta">{{category.image_name}}</span>
-            <h2 class="fh5co-article-title">{{pic.image_name}}</h2>
+            <h2 class="fh5co-article-title">{{category.image_name}}</h2>
 
           </article>
     {% endfor %}
