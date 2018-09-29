@@ -6,6 +6,7 @@ from .models import Image
 # Create your views here.
 def picture(request):
     image=Image.get_all()
+    date = dt.date.today
     return render(request, 'picture.html',{'date': date, 'image': image})
 
 def search_results(request):

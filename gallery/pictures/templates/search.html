@@ -4,9 +4,9 @@
 
   <div class="row">
     {% if articles%}
-      <h2>Found {{ categories|length }} of searched term {{message}}</h2>
+      <h2> {{ categories|length }}}</h2>
     {% else %}
-      <h2> Found 0 categories for the search term {{message}}</h2>
+      <h2>{{message}}</h2>
     {% endif %}
 
   </div>
@@ -15,10 +15,16 @@
 
   {% if categories %}
     {% for category in categories %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{category.image_description}}</h1>
-<img src="{{category.image.url}}" alt="">
-      </div>
+    <div class="container-fluid">
+        <div class="row fh5co-post-entry">
+          <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+            <span class="fh5co-meta"><a href="single.html">{{category.image_name}}</a></span>
+            <figure>
+              <a href="single.html"><img src="{{category.image.url}}" class="img-responsive img-responsive" alt="Image"></a>
+            </figure>
+            <!-- <h2 class="fh5co-article-title"><a href="single.html">{{pic.image_name}}</a></h2> -->
+            <span class="fh5co-meta fh5co-date">March 6th, 2016</span>
+          </article>
     {% endfor %}
   {% endif %}
   </div>
