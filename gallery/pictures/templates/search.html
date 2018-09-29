@@ -6,7 +6,7 @@
     {% if articles%}
       <h2> {{ categories|length }}}</h2>
     {% else %}
-      <h2>{{message}}</h2>
+      <h2>  no categories{{message}}</h2>
     {% endif %}
 
   </div>
@@ -20,9 +20,11 @@
           <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
             <span class="fh5co-meta">{{category.image_name}}</span>
             <figure>
-              <img src="{{category.image.url}}" class="img-responsive" alt="Image">
+            <img src="{{category.image.url}}" class="img-responsive img-responsive" alt="Image">
             </figure>
-            <!-- <h2 class="fh5co-article-title"><a href="single.html">{{pic.image_name}}</a></h2> -->
+            	<span class="fh5co-meta">{{category.image_name}}</span>
+            <h2 class="fh5co-article-title">{{pic.image_name}}</h2>
+
           </article>
     {% endfor %}
   {% endif %}
