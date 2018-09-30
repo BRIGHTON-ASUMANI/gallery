@@ -16,13 +16,13 @@
   {% if categories %}
     {% for category in categories %}
     <div class="container-fluid">
-        <div class="row fh5co-post-entry">
+        <div class="row brighton-post-entry">
           <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-            <span class="fh5co-meta">{{category.image_name}}</span>
+            <span class="brighton-meta">{{category.image_name}}</span>
             <figure>
             <img src="{{category.image.url}}" class="img-responsive img-responsive" alt="Image">
             </figure>
-            <h2 class="fh5co-article-title">{{category.image_name}}</h2>
+            <h2 class="brighton-article-title">{{category.image_name}}</h2>
 
           </article>
     {% endfor %}
