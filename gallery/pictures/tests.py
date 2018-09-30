@@ -34,6 +34,7 @@ class CategoryTestClass(TestCase):
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
 
+
 class ImageTestClass(TestCase):
 
     # Set up method
@@ -52,3 +53,8 @@ class ImageTestClass(TestCase):
     def test_get_all_images(self):
         imagess = Image.all_images()
         self.assertTrue(len(imagess)==0)
+
+        @classmethod
+    def display_credentials(cls):
+
+        return cls.credential_list
