@@ -18,11 +18,12 @@
     <div class="container-fluid">
         <div class="row brighton-post-entry">
           <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-        /
+            <span class="brighton-meta"><a href=''>{{category.image_name}}</a></span>
             <figure>
-            <img src="{{category.image.url}}" class="img-responsive img-responsive" alt="Image">
+            <a href="/"><img src="{{category.image.url}}" class="img-responsive img-responsive" alt="Image"></a>
             </figure>
-            <h2 class="brighton-article-title">{{category.image_name}}</h2>
+            <!-- <span class="brighton-meta">{{category.image_name}}</span> -->
+             <h2 class="brighton-article-title">{{category.image_name}}</h2>
 
           </article>
     {% endfor %}
