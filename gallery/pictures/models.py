@@ -31,16 +31,12 @@ class Image(models.Model):
     image_description = models.TextField()
     category = models.ManyToManyField(Category)
     location = models.ForeignKey(Location)
-    pub_date = models.DateTimeField(auto_now_add=True)
+    post_date = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.image_name
 
-    class Meta:
-        ordering = ['pub_date']
     @classmethod
     def get_all(cls):
-        image = cls.objects.order_by('pub_date')
+        image = cls.objects.order_by('post_date')
         return image
 
     @classmethod
