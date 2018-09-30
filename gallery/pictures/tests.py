@@ -33,3 +33,22 @@ class CategoryTestClass(TestCase):
         self.category.save_category()
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
+
+class ImageTestClass(TestCase):
+
+    # Set up method
+    def setUp(self):
+        self.location= Location(location = 'France')
+        self.location.save_location()
+
+        self.new_category = Category(category = 'Shepherd')
+        self.new_category.save()
+
+    def tearDown(self):
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+        Image.objects.all().delete()
+
+    def test_get_all_images(self):
+        imagess = Image.all_images()
+        self.assertTrue(len(imagess)==0)

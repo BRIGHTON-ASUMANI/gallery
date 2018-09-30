@@ -35,7 +35,7 @@ class Image(models.Model):
 
 
     @classmethod
-    def get_all(cls):
+    def all_images(cls):
         image = cls.objects.order_by('post_date')
         return image
 
