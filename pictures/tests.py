@@ -18,6 +18,7 @@ class LocationTestClass(TestCase):
         location = Location.objects.all()
         self.assertTrue(len(location) > 0)
 
+
 class CategoryTestClass(TestCase):
 
     # Set up method

@@ -612,18 +612,6 @@ figure figcaption {
 }
 
 
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
 
 
 @-webkit-keyframes zoom {
@@ -654,12 +642,7 @@ figure figcaption {
     cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
-}
+
 
 #photos {
    /* Prevent vertical gaps */

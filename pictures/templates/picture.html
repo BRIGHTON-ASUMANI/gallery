@@ -10,7 +10,7 @@
   {% for pic in image %}
 
 
-          <a href="/"><img src="{{pic.image.url}}" class="img-responsive img-rounded" alt="Image"></a>
+          <a><img src="{{pic.image.url}}" class="img-responsive" style='max-width:100%;' alt="Image"></a>
 
   {% empty %}
   <div class="row">

@@ -12,6 +12,10 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
+    #deleting
+    def delete_location(self):
+        self.delete()
+
 
 # Category model
 class Category(models.Model):
@@ -23,8 +27,11 @@ class Category(models.Model):
     def save_category(self):
         self.save()
 
+    #deleting
+    def delete_category(self):
+        self.delete()
 
-# Image model
+
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length =30)
@@ -37,6 +44,11 @@ class Image(models.Model):
     @classmethod
     def all_images(cls):
         image = cls.objects.order_by('post_date')
+        return image
+
+    @classmethod
+    def get_image(cls, id):
+        image = cls.objects.get(id=id)
         return image
 
     @classmethod
