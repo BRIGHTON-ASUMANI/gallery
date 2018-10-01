@@ -30,7 +30,7 @@ class Image(models.Model):
     image_name = models.CharField(max_length =30)
     image_description = models.TextField()
     category = models.ManyToManyField(Category)
-    location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location,on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
 
 
