@@ -5,7 +5,7 @@ from .models import Image
 
 # Create your views here.
 def picture(request):
-    image=Image.get_all()
+    image=Image.all_images()
     date = dt.date.today
     return render(request, 'picture.html',{'date': date, 'image': image})
 
