@@ -4,22 +4,13 @@
 {{block.super}}
 
 
-<div class="container-fluid">
 
+<section id="photos">
   <!-- Looping through news   -->
   {% for pic in image %}
 
-  <div class="container-fluid" >
-      <div class="row brighton-post-entry">
-        <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-          <span class="brighton-meta"><a href="/">{{pic.location}}</a></span>
-          <figure>
-          <a href="/"><img src="{{pic.image.url}}" class="img-responsive img-rounded" alt="Image"></a>
-          </figure>
-            <!-- <span class="brighton-meta">{{pic.image_name}}</span> -->
-          <h2 class="brighton-article-title">{{pic.image_name}}</h2>
 
-        </article>
+          <a href="/"><img src="{{pic.image.url}}" class="img-responsive img-rounded" alt="Image"></a>
 
   {% empty %}
   <div class="row">
@@ -27,7 +18,6 @@
   </div>
   {% endfor %}
 
-</div>
-</div>
 
+</section>
 {% endblock %}
