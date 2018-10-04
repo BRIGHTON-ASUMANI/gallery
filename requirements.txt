@@ -1,3 +1,4 @@
+Brotli==1.0.6
 config==0.3.9
 dj-database-url==0.5.0
 Django==1.11
