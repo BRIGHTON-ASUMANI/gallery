@@ -2,17 +2,169 @@
 
 {% block content %}
 {{block.super}}
-
-
+<center><h1 class='my-font-bold'>Types of Dogs</h1></center>
 
 <section id="photos">
   <!-- Looping through news   -->
   {% for pic in image %}
+<img src="{{pic.image.url}}" class="img-responsive"  data-toggle="modal" data-target="#{{pic.id}}"  style='max-width:100%;' alt="Image">
+<!-- Modal: modalQuickView -->
+<div class="modal fade" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{pic.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-5">
+
+            <img src="{{pic.image.url}}"
+            data-toggle="modal" data-target="#{{image.id}}"
+            alt="pics" style="width:100%;" >
 
 
-          <a><img src="{{pic.image.url}}" class="img-responsive" style='max-width:100%;' alt="Image"></a>
+          </div>
+          <div class="col-lg-7">
+            <h2 class="h2-responsive product-name">
+              <strong>Product Name</strong>
+            </h2>
+            <h4 class="h4-responsive">
+              <span class="green-text">
+                <strong>$49</strong>
+              </span>
+              <span class="grey-text">
+                <small>
+                  <s>$89</s>
+                </small>
+              </span>
+            </h4>
 
-  {% empty %}
+            <!--Accordion wrapper-->
+            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+
+              <!-- Accordion card -->
+              <div class="card">
+
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingOne">
+                  <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5 class="mb-0">
+                      Description <i class="fa fa-angle-down rotate-icon"></i>
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne"
+                  data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                    squid. 3 wolf moon officia aute,
+                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion card -->
+
+              <!-- Accordion card -->
+              <div class="card">
+
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingTwo">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
+                    aria-controls="collapseTwo">
+                    <h5 class="mb-0">
+                      Details <i class="fa fa-angle-down rotate-icon"></i>
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                    squid. 3 wolf moon officia aute,
+                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion card -->
+
+              <!-- Accordion card -->
+              <div class="card">
+
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingThree">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
+                    <h5 class="mb-0">
+                      Shipping <i class="fa fa-angle-down rotate-icon"></i>
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree"
+                  data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                    squid. 3 wolf moon officia aute,
+                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion card -->
+            </div>
+            <!--/.Accordion wrapper-->
+
+            <!-- Add to Cart -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="md-form">
+                    <select class="mdb-select colorful-select dropdown-primary">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">White</option>
+                      <option value="2">Black</option>
+                      <option value="3">Pink</option>
+                    </select>
+                    <label>Select color</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="md-form">
+                    <select class="mdb-select colorful-select dropdown-primary">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">XS</option>
+                      <option value="2">S</option>
+                      <option value="3">L</option>
+                    </select>
+                    <label>Select size</label>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary">Add to cart
+                  <i class="fa fa-cart-plus ml-2" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.Add to Cart -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% empty %}
   <div class="row">
     <h2 class="text-center">No Images</h2>
   </div>
